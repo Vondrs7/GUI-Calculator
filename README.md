@@ -1,8 +1,7 @@
 # GUI-Calculator
 Test project to create my first GUI app - simple calculator 
 
-![Calculator JV](https://user-images.githubusercontent.com/107077915/193034560-df0e86ec-b3d1-453c-a2c9-36c569a6dc6a.png)
-
+![Calculator JV](https://user-images.githubusercontent.com/107077915/193523063-7f47b935-984d-4da0-af9b-19e799c5d9e3.png)
 
 Not the final version (I hope)
 
