@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import QApplication
 class Calculator:
 
     def __init__(self):
+        
         Form, Window = uic.loadUiType("interface.ui")
         
         self.form = Form
@@ -11,13 +12,15 @@ class Calculator:
         self.app = QApplication([])
         self.window = Window()
         self.form = Form()
-        self.data = []
-        self.data_to_print = ""     # used for display number
+        self.data = ["0"]
+        self.data_to_print = "0"     # used for display number
         self.math_symbol = 0        # used for decision which mathematical operation will be used
         self.data_first_num = ""    # used for storage of entered first number
         self.data_second_num = ""   # used for storage of entered second number
         self.length_first = 0       # used to aid in the calculation of second number
         self.result = False         # used to aid display the result
+
+        self.error_message_zero = "Not divisible by zero"
 
 
     """ main method """
@@ -55,6 +58,8 @@ class Calculator:
 
     def __str__(self):
         if self.data and not self.result:
+            if len(self.data) > 1 and self.data[0] == "0" and not self.math_symbol:
+                del(self.data[0])
             self.data_to_print = ''.join(self.data)
             self.form.calculator_label.setText(self.data_to_print)
         elif self.result:
@@ -68,10 +73,11 @@ class Calculator:
 
     def input_zero(self):
         if not self.math_symbol:
-            if self.data_to_print != "":
-                self.data.append("0")
-            else:    
-                pass            
+            if (len(self.data) > 0):
+                if self.data[0] != "0":
+                    self.data.append("0") 
+            else:
+                self.data.append("0")         
         elif self.math_symbol:
             if self.data_to_print != "":
                 self.data.append("0")
@@ -146,8 +152,8 @@ class Calculator:
     """ input for C button which will reset display and data """
 
     def input_c(self):
-        self.data = []
-        self.data_to_print = ""
+        self.data = ["0"]
+        self.data_to_print = "0"
         self.math_symbol = 0
         self.data_first_num = ""
         self.data_second_num = ""
@@ -156,7 +162,7 @@ class Calculator:
         self.__str__()
 
 
-    """ inputs for math symbols + - * /  """
+    """ inputs for math symbols + - x :  """
 
     def input_plus(self):
         if not self.math_symbol:
@@ -181,20 +187,20 @@ class Calculator:
     def input_multiplication(self):
         if not self.math_symbol:
             self.data_first_num = self.data_to_print
-            self.data.append(" * ")
+            self.data.append(" x ")
         else:
             self.data.pop()
-            self.data.append(" * ")
+            self.data.append(" x ")
         self.math_symbol = 3
         self.__str__()
 
     def input_division(self):
         if not self.math_symbol:
             self.data_first_num = self.data_to_print
-            self.data.append(" / ")
+            self.data.append(" : ")
         else:
             self.data.pop()
-            self.data.append(" / ")
+            self.data.append(" : ")
         self.math_symbol = 4
         self.__str__()             
 
@@ -204,7 +210,6 @@ class Calculator:
     def input_result(self):
         self.length_first = (len(self.data_first_num) + 3)
         self.data_second_num = self.data_to_print[self.length_first:(len(self.data_to_print))]
-        self.data_to_print = 0
         if self.math_symbol == 1:
             self.data_to_print = int(self.data_first_num) + int(self.data_second_num)
             self.result = True
@@ -215,7 +220,11 @@ class Calculator:
             self.data_to_print = int(self.data_first_num) * int(self.data_second_num)
             self.result = True
         elif self.math_symbol == 4:
-            self.data_to_print = int(self.data_first_num) // int(self.data_second_num)
+            if self.data_second_num == "0":
+                self.data_to_print = self.error_message_zero
+            else:
+                self.data_to_print = int(self.data_first_num) / int(self.data_second_num)
+                self.data_to_print = round(self.data_to_print, 3)
             self.result = True
         self.__str__()
   
