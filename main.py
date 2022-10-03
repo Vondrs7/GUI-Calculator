@@ -20,7 +20,8 @@ class Calculator:
         self.length_first = 0       # used to aid in the calculation of second number
         self.result = False         # used to aid display the result
 
-        self.error_message_zero = "Not divisible by zero"
+        self.error_message_zero = "Not divisible by 0"
+        self.error_message_zero_2 = "Cannot divide 0"
 
 
     """ main method """
@@ -52,6 +53,7 @@ class Calculator:
         self.form.pushButton_multiplication.clicked.connect(self.input_multiplication)
         self.form.pushButton_division.clicked.connect(self.input_division)
         self.form.pushButton_result.clicked.connect(self.input_result)
+        self.form.pushButton_comma.clicked.connect(self.input_comma)
 
 
     """ output to the display """
@@ -61,9 +63,22 @@ class Calculator:
             if len(self.data) > 1 and self.data[0] == "0" and not self.math_symbol:
                 del(self.data[0])
             self.data_to_print = ''.join(self.data)
+            if (self.data_to_print.find(".")) > 0:
+                self.data_to_print = self.data_to_print.replace(".",",")
             self.form.calculator_label.setText(self.data_to_print)
+            if (self.data_to_print.find(",")) > 0:
+                self.data_to_print = self.data_to_print.replace(",",".")
         elif self.result:
-            self.form.calculator_label.setText(str(self.data_to_print))
+            try:
+                if (self.data_to_print % round(self.data_to_print)) == 0:
+                    self.data_to_print = int(self.data_to_print)
+                else:
+                    self.data_to_print = str(self.data_to_print)
+                    self.data_to_print = self.data_to_print.replace(".",",")    
+            except:  
+                self.data_to_print = self.data_to_print.replace(".",",")
+            self.data_to_print = str(self.data_to_print)
+            self.form.calculator_label.setText(self.data_to_print)
         else:
             self.form.calculator_label.setText("0")
 
@@ -149,6 +164,12 @@ class Calculator:
         self.__str__()
 
 
+    """ comma (dot) input for float numbers """
+
+    def input_comma(self):
+        self.data.append(".")
+        self.__str__()
+
     """ input for C button which will reset display and data """
 
     def input_c(self):
@@ -211,19 +232,21 @@ class Calculator:
         self.length_first = (len(self.data_first_num) + 3)
         self.data_second_num = self.data_to_print[self.length_first:(len(self.data_to_print))]
         if self.math_symbol == 1:
-            self.data_to_print = int(self.data_first_num) + int(self.data_second_num)
+            self.data_to_print = float(self.data_first_num) + float(self.data_second_num)
             self.result = True
         elif self.math_symbol == 2:
-            self.data_to_print = int(self.data_first_num) - int(self.data_second_num)
+            self.data_to_print = float(self.data_first_num) - float(self.data_second_num)
             self.result = True
         elif self.math_symbol == 3:
-            self.data_to_print = int(self.data_first_num) * int(self.data_second_num)
+            self.data_to_print = float(self.data_first_num) * float(self.data_second_num)
             self.result = True
         elif self.math_symbol == 4:
             if self.data_second_num == "0":
                 self.data_to_print = self.error_message_zero
+            elif self.data_first_num == "0":
+                self.data_to_print = self.error_message_zero_2
             else:
-                self.data_to_print = int(self.data_first_num) / int(self.data_second_num)
+                self.data_to_print = float(self.data_first_num) / float(self.data_second_num)
                 self.data_to_print = round(self.data_to_print, 3)
             self.result = True
         self.__str__()

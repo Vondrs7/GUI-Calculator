@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>290</width>
-    <height>270</height>
+    <width>255</width>
+    <height>265</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>290</width>
-    <height>270</height>
+    <width>255</width>
+    <height>265</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>300</width>
-    <height>270</height>
+    <width>255</width>
+    <height>265</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -38,16 +38,16 @@
   <widget class="QLabel" name="calculator_label">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>5</y>
-     <width>291</width>
-     <height>41</height>
+     <x>10</x>
+     <y>10</y>
+     <width>231</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Arial Black</family>
-     <pointsize>18</pointsize>
+     <pointsize>16</pointsize>
      <weight>75</weight>
      <italic>false</italic>
      <bold>true</bold>
@@ -79,21 +79,28 @@
     <number>0</number>
    </property>
    <property name="indent">
-    <number>15</number>
+    <number>6</number>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_1">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>50</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;
+</string>
    </property>
    <property name="text">
     <string>1</string>
@@ -102,15 +109,21 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>90</x>
      <y>50</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>2</string>
@@ -119,15 +132,21 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>170</x>
      <y>50</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>3</string>
@@ -136,15 +155,21 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>80</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>4</string>
@@ -153,15 +178,21 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_5">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>90</x>
      <y>80</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>5</string>
@@ -170,15 +201,21 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_6">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>170</x>
      <y>80</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>6</string>
@@ -187,15 +224,21 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_7">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>110</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>7</string>
@@ -204,15 +247,21 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_8">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>90</x>
      <y>110</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>8</string>
@@ -221,15 +270,21 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_9">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>170</x>
      <y>110</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>9</string>
@@ -238,15 +293,21 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_0">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>90</x>
      <y>140</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>0</string>
@@ -255,15 +316,21 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_C">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>140</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>C</string>
@@ -272,20 +339,21 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_plus">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>170</y>
-     <width>51</width>
+     <width>54</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>11</pointsize>
     </font>
    </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>+</string>
@@ -294,20 +362,21 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_minus">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>70</x>
      <y>170</y>
-     <width>51</width>
+     <width>54</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>11</pointsize>
     </font>
    </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>-</string>
@@ -316,20 +385,21 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_multiplication">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>130</x>
      <y>170</y>
-     <width>51</width>
+     <width>54</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>11</pointsize>
     </font>
    </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>x</string>
@@ -338,9 +408,9 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_division">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>190</x>
      <y>170</y>
-     <width>51</width>
+     <width>54</width>
      <height>41</height>
     </rect>
    </property>
@@ -352,12 +422,13 @@ background-color: rgb(158, 158, 158);</string>
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>11</pointsize>
     </font>
    </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>:</string>
@@ -384,18 +455,47 @@ background-color: rgb(158, 158, 158);</string>
   <widget class="QPushButton" name="pushButton_result">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>220</y>
-     <width>231</width>
-     <height>31</height>
+     <width>234</width>
+     <height>35</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: rgb(158, 158, 158);</string>
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>=</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_comma">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>140</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string>,</string>
    </property>
   </widget>
  </widget>
