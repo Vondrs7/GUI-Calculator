@@ -13,7 +13,13 @@ This version can:
   - control only with buttons
   - "C" button for reset
 
-Upgrade points:
+03-10-22 added:
+  - button for comma
+  - float numbers
+  - buttons with border radius
+  - fixed bugs with operations with 0
+
+Planned upgrade points:
   - calculations with any number of numbers
   - add percentage calculation
   - add exponentation
