@@ -1,13 +1,13 @@
 # GUI-Calculator
 Test project to create my first GUI app - simple calculator 
 
-![Calculator JV](https://user-images.githubusercontent.com/107077915/193523063-7f47b935-984d-4da0-af9b-19e799c5d9e3.png)
+![Calculator JV](https://user-images.githubusercontent.com/107077915/193565480-03aedda6-0ebe-4e9f-9f6a-a27610c55b7d.png)
 
 Not the final version (I hope)
 
 This version can:
   - operation for two numbers (no more)
-  - only integer (not float)
+  - counting with both int and float
   - addition, subtraction, multiplication, division
   - "dark GUI mode"
   - control only with buttons
@@ -15,5 +15,6 @@ This version can:
 
 Upgrade points:
   - calculations with any number of numbers
-  - change to float numbers
   - add percentage calculation
+  - add exponentation
+  - ...
