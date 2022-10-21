@@ -1,3 +1,4 @@
+from pickle import FALSE
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication
 
@@ -19,9 +20,13 @@ class Calculator:
         self.data_second_num = ""   # used for storage of entered second number
         self.length_first = 0       # used to aid in the calculation of second number
         self.result = False         # used to aid display the result
+        self.error = False          # used if is error (for example for division by 0)
+        self.max_one_comma = False  # we need to have only one comma in each number
 
-        self.error_message_zero = "Not divisible by 0"
-        self.error_message_zero_2 = "Cannot divide 0"
+        self.math_symbols = [" + ", " - ", " x ", " ÷ "]
+
+        self.error_message_zero = "Not divisible by 0"  # error message for division by 0
+        self.error_message_zero_2 = "Cannot divide 0"   # error message when user divide 0
 
 
     """ main method """
@@ -60,28 +65,24 @@ class Calculator:
 
     def __str__(self):
         if self.data and not self.result:
-            if len(self.data) > 1 and self.data[0] == "0" and not self.math_symbol:
+            if len(self.data) > 1 and self.data[0] == "0" and not self.math_symbol and self.data[1] != ".":
                 del(self.data[0])
             self.data_to_print = ''.join(self.data)
-            if (self.data_to_print.find(".")) > 0:
+            if self.data_to_print.find(".") > 1:
                 self.data_to_print = self.data_to_print.replace(".",",")
-            self.form.calculator_label.setText(self.data_to_print)
-            if (self.data_to_print.find(",")) > 0:
+            self.form.calculator_label_input.setText(self.data_to_print)
+            if self.data_to_print.find(",") > 0:
                 self.data_to_print = self.data_to_print.replace(",",".")
-        elif self.result:
-            try:
-                if (self.data_to_print % round(self.data_to_print)) == 0:
-                    self.data_to_print = int(self.data_to_print)
-                else:
-                    self.data_to_print = str(self.data_to_print)
-                    self.data_to_print = self.data_to_print.replace(".",",")    
-            except:  
-                self.data_to_print = self.data_to_print.replace(".",",")
-            self.data_to_print = str(self.data_to_print)
-            self.form.calculator_label.setText(self.data_to_print)
+        elif self.error:
+            self.form.calculator_label_input.setText(self.data_to_print)
+        elif self.result:     
+            if self.data_to_print == 0.0 or (self.data_to_print % round(self.data_to_print)) == 0:
+                self.data_to_print = int(self.data_to_print)                                            # if the number is without a decimal, it will display it without a decimal (as int)               
+            self.data_to_print = str(self.data_to_print)  
+            self.data_to_print = self.data_to_print.replace(".",",")            
+            self.form.calculator_label_result.setText(self.data_to_print)
         else:
-            self.form.calculator_label.setText("0")
-
+            self.form.calculator_label_input.setText("0")
 
 
     """ Calculator inputs of number buttons """
@@ -167,8 +168,16 @@ class Calculator:
     """ comma (dot) input for float numbers """
 
     def input_comma(self):
-        self.data.append(".")
-        self.__str__()
+        if self.data[-1] == ".":
+            pass
+        else:
+            if self.data[-1] in self.math_symbols:
+                self.data.append("0")
+            if not self.max_one_comma:
+                self.data.append(".")
+                self.max_one_comma = True
+            self.__str__()
+
 
     """ input for C button which will reset display and data """
 
@@ -180,48 +189,82 @@ class Calculator:
         self.data_second_num = ""
         self.length_first = 0
         self.result = False
+        self.error = False
+        self.max_one_comma = False
+        self.form.calculator_label_result.setText("")
         self.__str__()
 
+
+    """ method for operations with multiple numbers  """
+
+    def next_number(self):
+        if self.result:
+            self.data = [self.data_to_print]
+            self.math_symbol = False
+            self.result = False
+            self.max_one_comma = False
+            try:
+                self.data_to_print = self.data_to_print.replace(",",".")
+            except:
+                pass
+        else:
+            self.max_one_comma = False
 
     """ inputs for math symbols + - x :  """
 
     def input_plus(self):
+        self.next_number()
         if not self.math_symbol:
             self.data_first_num = self.data_to_print
-            self.data.append(" + ")
+        elif self.math_symbol and self.data[-1] not in self.math_symbols:
+            self.input_result()
+            self.data_first_num = self.data_to_print
+            self.next_number()
         else:
             self.data.pop()
-            self.data.append(" + ")
+        self.data.append(self.math_symbols[0])
         self.math_symbol = 1
         self.__str__()
 
     def input_minus(self):
+        self.next_number()
         if not self.math_symbol:
             self.data_first_num = self.data_to_print
-            self.data.append(" - ")
+        elif self.math_symbol and self.data[-1] not in self.math_symbols:
+            self.input_result()
+            self.data_first_num = self.data_to_print
+            self.next_number()
         else:
             self.data.pop()
-            self.data.append(" - ")
+        self.data.append(self.math_symbols[1])
         self.math_symbol = 2
         self.__str__()
 
     def input_multiplication(self):
+        self.next_number()
         if not self.math_symbol:
             self.data_first_num = self.data_to_print
-            self.data.append(" x ")
+        elif self.math_symbol and self.data[-1] not in self.math_symbols:
+            self.input_result()
+            self.data_first_num = self.data_to_print
+            self.next_number()
         else:
             self.data.pop()
-            self.data.append(" x ")
+        self.data.append(self.math_symbols[2])
         self.math_symbol = 3
         self.__str__()
 
     def input_division(self):
+        self.next_number()
         if not self.math_symbol:
             self.data_first_num = self.data_to_print
-            self.data.append(" : ")
+        elif self.math_symbol and self.data[-1] not in self.math_symbols:
+            self.input_result()
+            self.data_first_num = self.data_to_print
+            self.next_number()
         else:
             self.data.pop()
-            self.data.append(" : ")
+        self.data.append(self.math_symbols[3])
         self.math_symbol = 4
         self.__str__()             
 
@@ -229,27 +272,37 @@ class Calculator:
     """ if user click on equel sign, program will calculate result and send to dispaly """
 
     def input_result(self):
-        self.length_first = (len(self.data_first_num) + 3)
-        self.data_second_num = self.data_to_print[self.length_first:(len(self.data_to_print))]
-        if self.math_symbol == 1:
-            self.data_to_print = float(self.data_first_num) + float(self.data_second_num)
-            self.result = True
-        elif self.math_symbol == 2:
-            self.data_to_print = float(self.data_first_num) - float(self.data_second_num)
-            self.result = True
-        elif self.math_symbol == 3:
-            self.data_to_print = float(self.data_first_num) * float(self.data_second_num)
-            self.result = True
-        elif self.math_symbol == 4:
-            if self.data_second_num == "0":
-                self.data_to_print = self.error_message_zero
-            elif self.data_first_num == "0":
-                self.data_to_print = self.error_message_zero_2
-            else:
-                self.data_to_print = float(self.data_first_num) / float(self.data_second_num)
+        if self.result == True:
+            pass
+        else:
+            self.length_first = len(self.data_first_num) + 3
+            self.data_second_num = self.data_to_print[self.length_first:len(self.data_to_print)]
+            if self.data[-1] in self.math_symbols:
+                pass
+            elif self.math_symbol == 1:
+                self.data_to_print = float(self.data_first_num) + float(self.data_second_num)
                 self.data_to_print = round(self.data_to_print, 3)
-            self.result = True
-        self.__str__()
+                self.result = True
+            elif self.math_symbol == 2:
+                self.data_to_print = float(self.data_first_num) - float(self.data_second_num)
+                self.data_to_print = round(self.data_to_print, 3)
+                self.result = True
+            elif self.math_symbol == 3:
+                self.data_to_print = float(self.data_first_num) * float(self.data_second_num)
+                self.data_to_print = round(self.data_to_print, 3)
+                self.result = True
+            elif self.math_symbol == 4:
+                if self.data_second_num == "0":
+                    self.data_to_print = self.error_message_zero
+                    self.error = True
+                elif self.data_first_num == "0":
+                    self.data_to_print = self.error_message_zero_2
+                    self.error = True
+                else:
+                    self.data_to_print = float(self.data_first_num) / float(self.data_second_num)
+                    self.data_to_print = round(self.data_to_print, 3)
+                self.result = True
+            self.__str__()
   
     
 cal = Calculator()
