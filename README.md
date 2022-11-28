@@ -36,7 +36,5 @@ This version can:
 
 
 Planned upgrade points:
-  - add percentage calculation
   - add exponentation
-  - add backspace button
   - ...
