@@ -1,4 +1,4 @@
-from pickle import FALSE
+#from pickle import FALSE
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication
 
@@ -14,14 +14,15 @@ class Calculator:
         self.window = Window()
         self.form = Form()
         self.data = ["0"]
-        self.data_to_print = "0"     # used for display number
-        self.math_symbol = 0        # used for decision which mathematical operation will be used
-        self.data_first_num = ""    # used for storage of entered first number
-        self.data_second_num = ""   # used for storage of entered second number
-        self.length_first = 0       # used to aid in the calculation of second number
-        self.result = False         # used to aid display the result
-        self.error = False          # used if is error (for example for division by 0)
-        self.max_one_comma = False  # we need to have only one comma in each number
+        self.data_to_print = "0"            # used for display number
+        self.math_symbol = 0                # used for decision which mathematical operation will be used
+        self.data_first_num = ""            # used for storage of entered first number
+        self.data_second_num = ""           # used for storage of entered second number
+        self.length_first = 0               # used to aid in the calculation of second number
+        self.result = False                 # used to aid display the result
+        self.error = False                  # used if is error (for example for division by 0)
+        self.max_one_comma = False          # we need to have only one comma in each number
+        self.percent = False                # used to count the percentage
 
         self.math_symbols = [" + ", " - ", " x ", " ÷ "]
 
@@ -59,6 +60,9 @@ class Calculator:
         self.form.pushButton_division.clicked.connect(self.input_division)
         self.form.pushButton_result.clicked.connect(self.input_result)
         self.form.pushButton_comma.clicked.connect(self.input_comma)
+        self.form.pushButton_backspace.clicked.connect(self.input_backspace)
+        self.form.pushButton_plus_minus.clicked.connect(self.input_plus_minus)
+        self.form.pushButton_percent.clicked.connect(self.input_percent)
 
 
     """ output to the display """
@@ -67,16 +71,21 @@ class Calculator:
         if self.data and not self.result:
             if len(self.data) > 1 and self.data[0] == "0" and not self.math_symbol and self.data[1] != ".":
                 del(self.data[0])
+            if self.math_symbol and not self.max_one_comma and len(self.data) > 2:
+                if self.data[-2] == "0" and self.data[-3] in self.math_symbols:
+                    del(self.data[-2]) 
             self.data_to_print = ''.join(self.data)
-            if self.data_to_print.find(".") > 1:
+            if self.data_to_print.find(".") > 0:
                 self.data_to_print = self.data_to_print.replace(".",",")
             self.form.calculator_label_input.setText(self.data_to_print)
             if self.data_to_print.find(",") > 0:
                 self.data_to_print = self.data_to_print.replace(",",".")
         elif self.error:
             self.form.calculator_label_input.setText(self.data_to_print)
-        elif self.result:     
-            if self.data_to_print == 0.0 or (self.data_to_print % round(self.data_to_print)) == 0:
+        elif self.result:
+            if self.data_to_print < 1 and self.data_to_print > 0:
+                pass
+            elif self.data_to_print == 0.0 or self.data_to_print % round(self.data_to_print) == 0:
                 self.data_to_print = int(self.data_to_print)                                            # if the number is without a decimal, it will display it without a decimal (as int)               
             self.data_to_print = str(self.data_to_print)  
             self.data_to_print = self.data_to_print.replace(".",",")            
@@ -89,16 +98,16 @@ class Calculator:
 
     def input_zero(self):
         if not self.math_symbol:
-            if (len(self.data) > 0):
-                if self.data[0] != "0":
-                    self.data.append("0") 
+            if (len(self.data) == 1):
+                if self.data[0] != "0" and self.data[0] != "-":
+                    self.data.append("0")
             else:
                 self.data.append("0")         
         elif self.math_symbol:
-            if self.data_to_print != "":
-                self.data.append("0")
-            else:            
+            if self.data[-1] == "0" and self.data[-2] in self.math_symbols:
                 pass
+            else:            
+                self.data.append("0")
         self.__str__()
 
     def input_first(self):
@@ -171,6 +180,8 @@ class Calculator:
         if self.data[-1] == ".":
             pass
         else:
+            if self.result == True:
+                self.next_number()
             if self.data[-1] in self.math_symbols:
                 self.data.append("0")
             if not self.max_one_comma:
@@ -191,18 +202,79 @@ class Calculator:
         self.result = False
         self.error = False
         self.max_one_comma = False
+        self.math_symbol = False
+        self.percent = False
         self.form.calculator_label_result.setText("")
         self.__str__()
+
+
+    """ method for backspace button for remove last number or symbol """
+
+    def input_backspace(self):
+        if (len(self.data) == 1):
+                if self.data[0] != "0":
+                    self.data[0] = "0"
+        elif self.result:
+            self.form.calculator_label_result.setText("")
+            self.result = False   
+        else:
+            if self.data[-1] in self.math_symbols:
+                self.math_symbol = False
+            if self.data[-1] == ".":
+                self.max_one_comma = False
+            del(self.data[-1])
+        self.__str__()
+
+
+    """ method to switch the number to a positive or negative """
+
+    def input_plus_minus(self):
+        if self.math_symbol == False:
+            if (len(self.data) == 1):
+                    if self.data[0] == "0":
+                        self.data.append("-")
+                    elif self.data[0] != "-":
+                        self.data.reverse()
+                        self.data.append("-")
+                        self.data.reverse()
+            elif "-" in self.data[0]:
+                self.data.remove("-")
+                self.data.insert(0,"0")
+            elif self.data[0] != "-":
+                self.data.reverse()
+                self.data.append("-")
+                self.data.reverse()
+        if self.result:
+            self.next_number()
+            if not self.data_to_print.startswith("-"):
+                self.data.reverse()
+                self.data.append("-")
+                self.data.reverse()              
+            else:
+                self.data_to_print = self.data_to_print.replace("-","0")
+        self.__str__()
+
+    """ method to count the percentage """
+    
+    def input_percent(self):
+        if self.data[-1] != ".":
+            if self.math_symbol:
+                self.percent = True
+            self.input_result()
 
 
     """ method for operations with multiple numbers  """
 
     def next_number(self):
+        self.form.calculator_label_result.setText("")
         if self.result:
-            self.data = [self.data_to_print]
+            self.data = []
+            for x in self.data_to_print:
+                self.data.append(x)
             self.math_symbol = False
             self.result = False
             self.max_one_comma = False
+            self.percent = False
             try:
                 self.data_to_print = self.data_to_print.replace(",",".")
             except:
@@ -280,24 +352,41 @@ class Calculator:
             if self.data[-1] in self.math_symbols:
                 pass
             elif self.math_symbol == 1:
-                self.data_to_print = float(self.data_first_num) + float(self.data_second_num)
-                self.data_to_print = round(self.data_to_print, 3)
+                if self.percent:
+                    self.data_to_print = float(self.data_first_num) + (float(self.data_first_num) / 100 * float(self.data_second_num))
+                else:
+                    self.data_to_print = float(self.data_first_num) + float(self.data_second_num)
+                    self.data_to_print = round(self.data_to_print, 3)
                 self.result = True
             elif self.math_symbol == 2:
-                self.data_to_print = float(self.data_first_num) - float(self.data_second_num)
-                self.data_to_print = round(self.data_to_print, 3)
+                if self.percent:
+                    self.data_to_print = float(self.data_first_num) - (float(self.data_first_num) / 100 * float(self.data_second_num))
+                else:
+                    self.data_to_print = float(self.data_first_num) - float(self.data_second_num)
+                    self.data_to_print = round(self.data_to_print, 3)
                 self.result = True
             elif self.math_symbol == 3:
-                self.data_to_print = float(self.data_first_num) * float(self.data_second_num)
-                self.data_to_print = round(self.data_to_print, 3)
+                if self.percent:
+                    self.data_to_print = float(self.data_first_num) / 100 * float(self.data_second_num)
+                    self.data_to_print = round(self.data_to_print, 3)
+                else:
+                    self.data_to_print = float(self.data_first_num) * float(self.data_second_num)
+                    self.data_to_print = round(self.data_to_print, 3)
                 self.result = True
             elif self.math_symbol == 4:
-                if self.data_second_num == "0":
+                if self.data_second_num == "0" and not self.percent:
                     self.data_to_print = self.error_message_zero
                     self.error = True
-                elif self.data_first_num == "0":
+                elif self.data_first_num == "0" and not self.percent:
                     self.data_to_print = self.error_message_zero_2
                     self.error = True
+                elif self.percent:
+                    if float(self.data_first_num) == 0 and float(self.data_second_num) != 0:
+                        self.data_to_print = float(self.data_second_num) / 100
+                    elif float(self.data_second_num) == 0:
+                        self.data_to_print = 0
+                    else:
+                        self.data_to_print = 100 / float(self.data_second_num) * float(self.data_first_num)
                 else:
                     self.data_to_print = float(self.data_first_num) / float(self.data_second_num)
                     self.data_to_print = round(self.data_to_print, 3)

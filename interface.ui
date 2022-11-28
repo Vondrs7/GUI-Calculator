@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>255</width>
-    <height>310</height>
+    <height>335</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>255</width>
-    <height>310</height>
+    <height>335</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>255</width>
-    <height>310</height>
+    <height>335</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -40,8 +40,8 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>231</width>
-     <height>21</height>
+     <width>235</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
@@ -58,7 +58,10 @@
     <enum>Qt::RightToLeft</enum>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(218, 218, 218);</string>
+    <string notr="true">color: rgb(218, 218, 218);
+background-color:rgb(45, 45, 45);
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;</string>
    </property>
    <property name="text">
     <string>0</string>
@@ -86,9 +89,477 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>90</y>
+     <y>120</y>
      <width>75</width>
      <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+border-radius: 10px;
+background-color: rgb(55, 55, 55);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/one_white.png</normaloff>pictures/one_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>120</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+border-radius: 10px;
+background-color: rgb(55, 55, 55);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/two_white.png</normaloff>pictures/two_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>120</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+border-radius: 10px;
+background-color: rgb(55, 55, 55);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/three_white.png</normaloff>pictures/three_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>150</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+border-radius: 10px;
+background-color: rgb(55, 55, 55);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/four_white.png</normaloff>pictures/four_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>150</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+border-radius: 10px;
+background-color: rgb(55, 55, 55);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/five_white.png</normaloff>pictures/five_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_6">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>150</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+border-radius: 10px;
+background-color: rgb(55, 55, 55);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/six_white.png</normaloff>pictures/six_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_7">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>180</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+border-radius: 10px;
+background-color: rgb(55, 55, 55);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/seven_white.png</normaloff>pictures/seven_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_8">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>180</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+border-radius: 10px;
+background-color: rgb(55, 55, 55);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/eight_white.png</normaloff>pictures/eight_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_9">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>180</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+border-radius: 10px;
+background-color: rgb(55, 55, 55);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/nine_white.png</normaloff>pictures/nine_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_0">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>210</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+border-radius: 10px;
+background-color: rgb(55, 55, 55);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/zero_white.png</normaloff>pictures/zero_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_C">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>210</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/C_white.png</normaloff>pictures/C_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_plus">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>240</y>
+     <width>54</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/plus_white.png</normaloff>pictures/plus_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>22</width>
+     <height>22</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_minus">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>240</y>
+     <width>54</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/minus_white.png</normaloff>pictures/minus_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>22</width>
+     <height>22</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_multiplication">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>240</y>
+     <width>54</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
@@ -103,355 +574,28 @@
     <string notr="true">color: white;
 background-color: rgb(158, 158, 158);
 border-radius: 10px;
+
 </string>
    </property>
    <property name="text">
-    <string>1</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>90</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: rgb(158, 158, 158);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>2</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>90</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: rgb(158, 158, 158);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>3</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>120</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: rgb(158, 158, 158);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>4</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_5">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>120</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: rgb(158, 158, 158);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>5</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_6">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>120</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: rgb(158, 158, 158);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>6</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_7">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>150</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: rgb(158, 158, 158);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>7</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_8">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>150</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: rgb(158, 158, 158);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>8</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_9">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>150</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: rgb(158, 158, 158);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>9</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_0">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>180</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: rgb(158, 158, 158);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>0</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_C">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>180</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: rgb(158, 158, 158);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>C</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_plus">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>210</y>
-     <width>54</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: rgb(158, 158, 158);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>+</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_minus">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>210</y>
-     <width>54</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: rgb(158, 158, 158);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>-</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_multiplication">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>210</y>
-     <width>54</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;
-background-color: rgb(158, 158, 158);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>x</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/bold_white.png</normaloff>pictures/bold_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>22</width>
+     <height>22</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_division">
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>210</y>
+     <y>240</y>
      <width>54</width>
      <height>41</height>
     </rect>
@@ -476,7 +620,17 @@ background-color: rgb(158, 158, 158);
 border-radius: 10px;</string>
    </property>
    <property name="text">
-    <string>÷</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/div_white.png</normaloff>pictures/div_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
    </property>
    <property name="checkable">
     <bool>false</bool>
@@ -501,7 +655,7 @@ border-radius: 10px;</string>
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>260</y>
+     <y>290</y>
      <width>234</width>
      <height>35</height>
     </rect>
@@ -520,14 +674,24 @@ background-color: rgb(158, 158, 158);
 border-radius: 10px;</string>
    </property>
    <property name="text">
-    <string>=</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/result_white.png</normaloff>pictures/result_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_comma">
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>180</y>
+     <y>210</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -546,7 +710,17 @@ background-color: rgb(158, 158, 158);
 border-radius: 10px;</string>
    </property>
    <property name="text">
-    <string>,</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/com_white.png</normaloff>pictures/com_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
    </property>
   </widget>
   <widget class="QLabel" name="calculator_label_result">
@@ -554,7 +728,7 @@ border-radius: 10px;</string>
     <rect>
      <x>10</x>
      <y>40</y>
-     <width>231</width>
+     <width>235</width>
      <height>41</height>
     </rect>
    </property>
@@ -572,7 +746,10 @@ border-radius: 10px;</string>
     <enum>Qt::RightToLeft</enum>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: white;</string>
+    <string notr="true">color: white;
+background-color:rgb(45, 45, 45);
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;</string>
    </property>
    <property name="text">
     <string/>
@@ -594,6 +771,114 @@ border-radius: 10px;</string>
    </property>
    <property name="indent">
     <number>6</number>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_backspace">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>90</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/backspace_white.png</normaloff>pictures/backspace_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_plus_minus">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/plus_minus_white.png</normaloff>pictures/plus_minus_white.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_percent">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>90</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+background-color: rgb(158, 158, 158);
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>pictures/percent.png</normaloff>pictures/percent.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>13</width>
+     <height>13</height>
+    </size>
    </property>
   </widget>
  </widget>
